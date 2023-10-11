@@ -2,7 +2,7 @@ import React from "react";
 import "../css/loginpage.css";
 
 const SPOTIFY_CLIENT_ID = "43c6fcbf984e412ca043a5c8c290a9f3"; // Your Spotify Client ID
-const REDIRECT_URI = "http://localhost:3000/artist-search";
+const REDIRECT_URI = "https://spotifyreactapp.netlify.app/artist-search"; // Use the correct URI
 
 const LoginPage = () => {
   const handleSpotifyLogin = () => {

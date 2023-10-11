@@ -9,8 +9,8 @@ const NavBar = () => {
           <Link class="navbar-brand">Spotify</Link>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <Link class="d-flex" aria-current="page" to="/">
-                login
+              <Link class="d-flex" aria-current="page" to="/artist-search">
+                search
               </Link>
             </li>
           </ul>

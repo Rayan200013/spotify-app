@@ -1,0 +1,43 @@
+.spotify-loginPage,
+.container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-items: center !important;
+  flex-direction: column !important;
+}
+
+.spotify-loginPage button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px; /* Adjust padding as needed */
+  width: 25%; /* Adjust width as needed */
+  background: transparent;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s ease-in-out all;
+}
+
+.spotify-loginPage button:hover {
+  background: #ccc;
+  border: 1px solid #242424;
+
+}
+
+.spotify-loginPage button span {
+  text-align: center;
+  flex-grow: 1; /* Allow the text to take up all available space */
+}
+
+.spotify-loginPage button i.fa-spotify {
+  /* margin-left: 10px; Adjust the margin as needed to separate the text and the icon */
+}
+
+.fa-spotify:before {
+  content: "\f1bc";
+  border-radius: 25px;
+  background: #1ed760;
+  padding: 10px;
+  color: #fff;
+}

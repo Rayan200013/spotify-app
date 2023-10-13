@@ -51,8 +51,8 @@ This application integrates with the Spotify API to search for artists and retri
 3. **Redirect URIs:** I specified the following redirect URIs in my Spotify application settings. These URIs allow my application to authenticate with Spotify, and I tested them both locally and on a Netlify-hosted subdomain.
 
    - http://localhost:3000/
-   - https://spotifyreactapp.netlify.app/
    - http://localhost:3000/artist-search
+   - https://spotifyreactapp.netlify.app/
 
 4. **Access Token:** I used the Implicit Grant Flow for Spotify to obtain an access token. After successful authentication, the user is redirected to the "Artist Search" page.
 
@@ -78,9 +78,7 @@ To run the application:
 
 2. Install the required dependencies with `npm install`.
 
-3. Replace `"YOUR_ACCESS_TOKEN"` with your actual Spotify API access token in the code.
-
-4. Run the application locally with `npm start`.
+3. Run the application locally with `npm start`.
 
 ## Conclusion
 

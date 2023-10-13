@@ -11,8 +11,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px; /* Adjust padding as needed */
-  width: 25%; /* Adjust width as needed */
+  padding: 12px;
+  width: 25%;
   background: transparent;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -22,16 +22,11 @@
 .spotify-loginPage button:hover {
   background: #ccc;
   border: 1px solid #242424;
-
 }
 
 .spotify-loginPage button span {
   text-align: center;
-  flex-grow: 1; /* Allow the text to take up all available space */
-}
-
-.spotify-loginPage button i.fa-spotify {
-  /* margin-left: 10px; Adjust the margin as needed to separate the text and the icon */
+  flex-grow: 1;
 }
 
 .fa-spotify:before {

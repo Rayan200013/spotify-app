@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import spotifyLogo from "../images/Spotify-Logo.png";
+import "../css/NavBar.css";
 
 const NavBar = () => {
   return (
@@ -17,8 +18,12 @@ const NavBar = () => {
           </Link>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="d-flex" aria-current="page" to="/">
-                login
+              <Link
+                className="d-flex navbar-spotify"
+                aria-current="page"
+                to="/"
+              >
+                Home
               </Link>
             </li>
           </ul>

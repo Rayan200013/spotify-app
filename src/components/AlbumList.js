@@ -19,19 +19,17 @@ const calculateStarRating = (popularity) => {
 const AlbumsList = ({ artist }) => {
   // You can add your custom logic to format the artist's information here
   return (
-    <div className="card card-spotify" style={{ width: "18rem" }}>
-      <img src={artist.images[0]?.url} alt={artist.name} />
+    <Link to={`/artist/${artist.id}`} className="card-link">
+      <div className="card card-spotify" style={{ width: "18rem" }}>
+        <img src={artist.images[0]?.url} alt={artist.name} />
 
-      <div className="card-body">
-        <h3 className="card-title">{artist.name}</h3>
-        <p className="card-text">({artist.followers.total} followers)</p>
-        <p className="card-text">{calculateStarRating(artist.popularity)}</p>
-
-        <Link href="#" className="btn btn-primary">
-          Go somewhere
-        </Link>
+        <div className="card-body">
+          <h3 className="card-title">{artist.name}</h3>
+          <p className="card-text">({artist.followers.total} followers)</p>
+          <p className="card-text">{calculateStarRating(artist.popularity)}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,0 +1,8 @@
+.navbar-spotify {
+  text-decoration: none !important;
+  color: #757575 !important;
+}
+
+.navbar-spotify:hover {
+  color: #1ed760 !important;
+}

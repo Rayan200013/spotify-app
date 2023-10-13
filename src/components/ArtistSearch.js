@@ -10,10 +10,10 @@ const ArtistSearch = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearchQuery(searchQuery);
-    }, 500); // Delay the search by 500 milliseconds after the user stops typing.
+    }, 500); // to make a small delay when users are seacrhing
 
     return () => {
-      clearTimeout(timer); // Clear the timer on unmount or when searchQuery changes.
+      clearTimeout(timer); 
     };
   }, [searchQuery]);
 
@@ -25,11 +25,9 @@ const ArtistSearch = () => {
 
   const handleSearch = async () => {
     try {
-      // Replace 'YOUR_ACCESS_TOKEN' with your actual Spotify API access token
       const accessToken =
-        "BQDNh7tEmadz89-wCsGznroFlXAb9CKmHtWgPl1Ej_Ds17Vu3zHwE9-JQDGpl1cTm48twfEpyukwEcqZAXPkmCBAY--Thpjoq065ucSstIMky9AEBLpmMcYybw7y7CIHU1U30-8RD5-YwCK9DsggCp9tquM3ohcZ0wvyKiHKVeqR5aU4TdRpxHHEOjAZtpbTucWLB98Jq_QRnCetCjLXoslAj3JKKhHeHfNxI4Aj1uU02HgLopyA9mJIedvg6kWXRcA2l8-nIWFyOH8LlNiArvcD";
-
-      console.log("Search Query:", debouncedSearchQuery); // Check the search query
+        "BQAW_CTejsl30fYSVLDw8plUNt6Gu18_2IpQNUsUgXTAqA3AZz_i2aTHzWAWUpp2T1nn_WaZkZpgpXcyhvijXou2RWgGBgal76Jbues3hQCjonHjMdj_KDZzTiMVX2wTRCcB6aVHSCzzUSOcIAjwXrwzYaU7SlHarzwwBD0KCmGleIxP9Wfr_EQtjlxJnn-ilTv3B8INQ4SkKHYceCrpA77mwV5TMndx63nSgbNsw8VheFrjNSDyO4uczlzoyjb92zaQKAKoCiMa1owM-j5KAeCe";
+      console.log("Search Query:", debouncedSearchQuery); 
 
       const response = await fetch(
         `https://api.spotify.com/v1/search?q=${debouncedSearchQuery}&type=artist`,
@@ -58,7 +56,7 @@ const ArtistSearch = () => {
 
   return (
     <div className="artist-search">
-      <h1>Artist Search</h1>
+      <h2>Spotify Artist Search</h2>
       <div className="search-container">
         <div className="input-container">
           <input

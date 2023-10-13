@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 500px; */
   justify-content: center;
   justify-items: center;
 }
@@ -22,9 +21,9 @@
 .input-container {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc; /* Add styling as needed */
+  border: 1px solid #ccc;
   padding: 10px;
-  width: 30%; /* Adjust the width as needed */
+  width: 30%;
 }
 
 .input-container input {
@@ -40,14 +39,15 @@
 }
 
 .search-icon {
-  margin-left: 10px; /* Adjust the margin as needed */
-  color: #ccc; /* Customize the color */
+  margin-left: 10px;
+  color: #ccc;
 }
 
-/* artistsearch.css */
+/* Album list.css */
+
+/* Styles for each artist card */
 
 .artist-card {
-  /* Styles for each artist card */
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
@@ -56,9 +56,7 @@
 .artist-card img {
   width: 100% !important;
 }
-
-/* Add any additional styling you want for the cards */
-
+/* the results that are coming from ALbumList file  */
 .search-results {
   display: flex;
   flex-direction: row;
@@ -68,8 +66,22 @@
   margin-top: 100px;
 }
 
+.artist-detail {
+  margin: 50px 10px !important;
+}
+
+/* to make soace between cardss and to create a good looking shape using border-radius */
 .card-spotify {
-  margin: 50px !important;
+  margin: 17px !important;
+  border-radius: 8px !important;
+}
+/* created for the image also A border-topleft  & right radius and set the image to have the same height on all cards*/
+.card-spotify img {
+  height: 285px;
+  width: 100% !important;
+  object-fit: cover;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
 .card-body {
@@ -77,6 +89,54 @@
   font-family: Arial;
   font-size: 14px !important;
 }
+
+.card-body-spotify-albums {
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-top: 20px !important;
+}
+
+.card-header-spotify {
+  padding: 0px 10px !important;
+  margin-top: -10px !important;
+}
+.card-body-spotify {
+  padding: 0px 10px !important;
+  margin-top: -10px !important;
+}
+
 .card-title {
-  font-size: 23px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+}
+
+.btn-primary {
+  background: #1ed760 !important;
+  border: 1px solid #1ed760 !important;
+  transition: 0.3s ease-in-out !important;
+}
+.btn-primary:hover {
+  background: #3fd674 !important;
+}
+
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 20px !important;
+}
+
+.card-link {
+  text-decoration: none !important;
+}
+/* preview on spotify css */
+.card-footer {
+  text-align: center !important;
+}
+.preview-on-spotify-link {
+  text-decoration: none !important;
+  color: #757575;
+  transition: 0.3s ease-in-out all;
+}
+.preview-on-spotify-link:hover {
+  color: #1ed760;
 }

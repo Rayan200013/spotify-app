@@ -18,7 +18,14 @@ This is a simple React-based web application that allows users to search for art
 
 - **Single-Page Application:** The app is built as a single-page application using React.
 
-- **Styling:** It uses Bootstrap for the design of the application.
+- **Styling with Bootstrap:** Bootstrap was used to enhance the design of the application.
+
+- **Project Structure:** The project structure consists of React components, including `AlbumsList.js`, `ArtistDetail.js`, `ArtistSearch.js`, `HomePage.js`, `LoginPage.js`, and `NavBar.js`.
+
+- **CSS Styling:** Component-specific styling can be found in the `src/css` directory, such as `artistSearch.css`, `loginPage.css`, and `NavBar.css`.
+
+- **Main Entry Point:** The primary entry point of the React application is `src/App.js`, where the routes and components are defined.
+
 
 ## Project Structure
 
@@ -82,4 +89,4 @@ To run the application:
 
 ## Conclusion
 
-This section provides insights into how I integrated the Spotify API into the application and the importance of using asynchronous functions in data fetching.
+The Spotify Artist Search App combines the power of React and the Spotify API to provide a user-friendly platform for discovering your favorite artists and exploring their music. and I need to mention the importance of using asynchronous functions in data fetching.

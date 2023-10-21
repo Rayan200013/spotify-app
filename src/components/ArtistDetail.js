@@ -11,9 +11,8 @@ const ArtistDetail = () => {
   useEffect(() => {
     const fetchArtistDetails = async () => {
       try {
-        // Replace 'YOUR_ACCESS_TOKEN' with your actual Spotify API access token
         const accessToken =
-          "BQAW_CTejsl30fYSVLDw8plUNt6Gu18_2IpQNUsUgXTAqA3AZz_i2aTHzWAWUpp2T1nn_WaZkZpgpXcyhvijXou2RWgGBgal76Jbues3hQCjonHjMdj_KDZzTiMVX2wTRCcB6aVHSCzzUSOcIAjwXrwzYaU7SlHarzwwBD0KCmGleIxP9Wfr_EQtjlxJnn-ilTv3B8INQ4SkKHYceCrpA77mwV5TMndx63nSgbNsw8VheFrjNSDyO4uczlzoyjb92zaQKAKoCiMa1owM-j5KAeCe";
+          "BQC5YTMJ5gu2dNikKF3DBAZJZqMDa2hw9mzt62s4Xx-cpVVn6NxRV-6fBE-Vr_sILidzthOQUy68fEJ43NdeRtlv8X4dSCFno80t1Dyj70NEUb71fUWr5e-IXNWoAgrb9KJGufOBJ4kaWmXJnW2zXgIHB4hFkEZciB9QgU53XuloRDwD5SGi4on3YSBiqV2QM6cTMEU_GAqVDbTy1S0_3Un0EJQKoPJ2zZk0_WGivp-uFdWDC0i4QrTwm0Gx6L32lzD0ROa_7AVWJNP-neeCftMT";
         const artistResponse = await fetch(
           `https://api.spotify.com/v1/artists/${artistId}`,
           {
@@ -66,7 +65,7 @@ const ArtistDetail = () => {
 
   return (
     <>
-      <nav aria-label="breadcrumb">
+      {/* <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <Link to="/artist-search">Search</Link>
@@ -75,7 +74,7 @@ const ArtistDetail = () => {
             {artistInfo.name}
           </li>
         </ol>
-      </nav>
+      </nav> */}
       <div className="artist-detail">
         <h2>{artistInfo.name}</h2>
         {/* <p>Followers: {artistInfo.followers.total}</p> */}
@@ -101,7 +100,7 @@ const ArtistDetail = () => {
                 <div class="card-footer">
                   <small class="text-body-secondary">
                     <Link
-                      href={song.external_urls.spotify}
+                      to={song.external_urls.spotify}
                       className="preview-on-spotify-link"
                       target="_blank"
                       rel="noopener noreferrer"

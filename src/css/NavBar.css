@@ -6,3 +6,7 @@
 .navbar-spotify:hover {
   color: #1ed760 !important;
 }
+
+.navbar {
+  background-color: rgba(161, 212, 182, 0.385) !important;
+}

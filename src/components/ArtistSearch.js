@@ -1,19 +1,26 @@
+// ArtistSearch.js
 import React, { useState, useEffect } from "react";
-import "../css/artistsearch.css"; // Create a CSS file for your component styles
-import AlbumsList from "../components/AlbumList"; // Import the AlbumsList component
+import { useLocation } from "react-router-dom";
+import "../css/artistsearch.css";
+import AlbumsList from "../components/AlbumList";
 
 const ArtistSearch = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState(searchQuery);
 
+  const location = useLocation();
+  const accessToken = new URLSearchParams(location.hash.substring(1)).get(
+    "access_token"
+  );
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearchQuery(searchQuery);
-    }, 500); // to make a small delay when users are seacrhing
+    }, 500);
 
     return () => {
-      clearTimeout(timer); 
+      clearTimeout(timer);
     };
   }, [searchQuery]);
 
@@ -25,9 +32,12 @@ const ArtistSearch = () => {
 
   const handleSearch = async () => {
     try {
-      const accessToken =
-        "BQAW_CTejsl30fYSVLDw8plUNt6Gu18_2IpQNUsUgXTAqA3AZz_i2aTHzWAWUpp2T1nn_WaZkZpgpXcyhvijXou2RWgGBgal76Jbues3hQCjonHjMdj_KDZzTiMVX2wTRCcB6aVHSCzzUSOcIAjwXrwzYaU7SlHarzwwBD0KCmGleIxP9Wfr_EQtjlxJnn-ilTv3B8INQ4SkKHYceCrpA77mwV5TMndx63nSgbNsw8VheFrjNSDyO4uczlzoyjb92zaQKAKoCiMa1owM-j5KAeCe";
-      console.log("Search Query:", debouncedSearchQuery); 
+      if (!accessToken) {
+        console.error(
+          "Access token is missing. Please authenticate with Spotify."
+        );
+        return;
+      }
 
       const response = await fetch(
         `https://api.spotify.com/v1/search?q=${debouncedSearchQuery}&type=artist`,
@@ -38,15 +48,11 @@ const ArtistSearch = () => {
         }
       );
 
-      console.log("Response Status:", response.status); // Check the response status
-
       if (response.ok) {
         const data = await response.json();
-        console.log("Data from Spotify:", data); // Check the data received from Spotify
         const artists = data.artists.items;
         setSearchResults(artists);
       } else {
-        // Handle errors
         console.error("Error searching for artists");
       }
     } catch (error) {
@@ -71,7 +77,6 @@ const ArtistSearch = () => {
         </div>
       </div>
 
-      {/* Render search results as cards using the AlbumsList component */}
       <div className="search-results">
         {searchResults.map((artist) => (
           <AlbumsList key={artist.id} artist={artist} />
